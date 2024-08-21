@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="./assets/css/index.css">
+</head>
+<body>
+    <div class="gameframe">
+        <h2>Welcome to BlackJack!</h2>
+        <p id="permission">Do you want to play? Click "Start Game".</p>
+        <p class="blackjack">Winning number is 21(BlackJack!)</p>
+        <p id="cards">Cards:</p>
+        <p id="sumcards">Sum:</p>
+        <div id="firstbuttons">
+            <button id="startgame" onclick="startgame()">Start Game</button>
+            <button id="newcard" onclick="drawcard()">Draw card</button>
+        </div>
+        <div class="renderbutton">
+            <button id="renderbutton" onclick="rendergame()">Render Game</button>
+        </div>
+        <p id="points">Points:</p>
+        <button class="reset" onclick="reset()">Reset Game</button>
+        <h3 id="playchance">5</h3>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+</html>
