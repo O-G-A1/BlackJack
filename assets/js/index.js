@@ -29,15 +29,15 @@ function rendergame(){
         }
         if(sumCards===21){
             message="Wow! You got a blackJack!"
-            document.querySelector("#points").textContent="Points:" + message;
+            document.querySelector("#points").textContent=message;
         }
         else if(sumCards<21){
-            message="You have no points. Wish to play again? Reset the board";
-            document.querySelector("#points").textContent="Points:" + message;
+            message="You did not have a BlackJack! Wish to play again? \n Reset the board";
+            document.querySelector("#points").textContent=message;
             
         }
         else if(sumCards>21){
-            message="Oops! You lose this set.\n Wish to play again? Hit Reset.";
-            document.querySelector("#points").textContent="Points:" + message;
+            message="Oops! Your cards are over the Blackjack! \n Wish to play again? Hit Reset.";
+            document.querySelector("#points").textContent=message;
         }
 }
