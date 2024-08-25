@@ -1,23 +1,19 @@
-// let firstNumber=parseInt(Math.random()*9)+1;
-// let secondNumber=parseInt(Math.random()*15)+1;
 let sumCards;
 let message;
 let gameOn;
-let cardDrawn=10;
+let cardDrawn=parseInt(Math.random()*20)+1;
 let cardsTray;
 let startGame=false;
 let drawCard=false;
 let gameRendered=false;
+let firstNumber=parseInt(Math.random()*9)+1;
+let secondNumber=parseInt(Math.random()*15)+1;
 
 function startgame(){
     if(startGame){
         document.getElementById("permission").textContent="You've already started the game!";        
     }else{
         startGame=true;
-        
-        let firstNumber=parseInt(Math.random()*9)+1;
-        let secondNumber=parseInt(Math.random()*15)+1;
-        
         gameOn="Do you wish to draw another card?";
         cardsTray=" "+ firstNumber +" "+"|"+" "+ secondNumber;
         document.getElementById("permission").textContent=gameOn;
@@ -35,9 +31,7 @@ function drawcard(){
             drawCard=true;
             gameOn="Maximum card reached!"
             document.getElementById("permission").textContent=gameOn;
-            let firstNumber=parseInt(Math.random()*9)+1;
-            let secondNumber=parseInt(Math.random()*15)+1;
-            cardsTray=" " + firstNumber +" "+ "|" + " " + secondNumber + " "+ "|" + cardDrawn;
+            cardsTray=" " + firstNumber +" "+ "|" + " " + secondNumber + " "+ "|" + " " + cardDrawn;
             document.getElementById("cards").textContent="Cards:" + cardsTray;
         }
     }else{
@@ -53,8 +47,8 @@ function rendergame(){
             
         }else{
             gameRendered=true;
-            let firstNumber=parseInt(Math.random()*9)+1;
-            let secondNumber=parseInt(Math.random()*15)+1;
+            firstNumber;
+            secondNumber;
             if(cardsTray.length<8){
                 sumCards=firstNumber+secondNumber;
                 document.querySelector("#sumcards").textContent+=sumCards;
@@ -89,6 +83,7 @@ function rendergame(){
     function reset(){
         startGame=false;
         drawCard=false;
+        gameRendered=false;
         gameOn="Do you wish to play? Click 'Start Game'";
         document.getElementById("permission").textContent=gameOn;
         cardsTray="";
@@ -97,8 +92,6 @@ function rendergame(){
         document.querySelector("#sumcards").textContent="Sum:" + sumCards;
         message="";
         document.querySelector("#points").textContent=message;
-
-
     }
 
     
